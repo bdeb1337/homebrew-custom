@@ -24,8 +24,8 @@ class Dsc < Formula
   url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
 
   livecheck do
-    url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:-\w+(?:\.\w+)*)?)$/i)
+    url "https://github.com/PowerShell/DSC/releases"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:-\w+(?:\.\w+)*)?)["' >]}i)
   end
 
   def install
