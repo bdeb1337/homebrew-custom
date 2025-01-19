@@ -25,6 +25,7 @@ class Dsc < Formula
 
   livecheck do
     url "https://github.com/PowerShell/DSC/releases"
+    strategy :page_match
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:-preview\.\d+)?)["' >]}i)
   end
 
