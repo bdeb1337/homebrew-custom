@@ -1,4 +1,6 @@
 class Dsc < Formula
+  version "3.0.0-preview.8"
+
   if OS.mac?
     if Hardware::CPU.intel?
       arch = "x86_64-apple-darwin"
@@ -20,7 +22,6 @@ class Dsc < Formula
   desc "Microsoft Desired State Configuration v3"
   homepage "https://github.com/PowerShell/DSC"
   url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
-  version "3.0.0-preview.8"
 
   livecheck do
     url :url
