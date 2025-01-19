@@ -25,7 +25,7 @@ class Dsc < Formula
 
   livecheck do
     url "https://github.com/PowerShell/DSC/releases"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:-\w+(?:\.\w+)*)?)["' >]}i)
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:-preview\.\d+)?)["' >]}i)
   end
 
   def install
