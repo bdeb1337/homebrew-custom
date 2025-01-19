@@ -1,12 +1,12 @@
 class Dsc < Formula
   desc "Microsoft Desired State Configuration v3"
-  homepage "https://github.com/PowerShell/DSC"
+  homepage "https://github.com/PowerShell/DSC/releases"
   version "3.0.0-preview.8"
 
   livecheck do
-    url :stable
+    url :homepage
     strategy :page_match
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+-preview\.\d+)}i)
+    regex(%r{href=.*?/releases/tag/v?(\d+(?:\.\d+)+-preview\.\d+)}i)
   end
 
   on_macos do
