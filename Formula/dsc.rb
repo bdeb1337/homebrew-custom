@@ -4,7 +4,7 @@ class Dsc < Formula
   version "3.0.0-preview.8"
 
   livecheck do
-    url "https://github.com/PowerShell/DSC/releases"
+    url :stable
     strategy :page_match
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+-preview\.\d+)}i)
   end
