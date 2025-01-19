@@ -2,7 +2,13 @@ class Dsc < Formula
   desc "Microsoft Desired State Configuration v3"
   homepage "https://github.com/PowerShell/DSC"
   version "3.0.0-preview.8"
-  
+
+  livecheck do
+    url "https://github.com/PowerShell/DSC/releases"
+    strategy :page_match
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+-preview\.\d+)}i)
+  end
+
   on_macos do
     if Hardware::CPU.intel?
       arch = "x86_64-apple-darwin"
@@ -26,20 +32,14 @@ class Dsc < Formula
       url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
     end
   end
-  
-  livecheck do
-    url "https://github.com/PowerShell/DSC/releases"
-    strategy :page_match
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+-preview\.\d+)}i)
+
+  def install
+    prefix.install Dir["*"]
+    # Create a wrapper script
+    (bin/"dsc").write <<~EOS
+      #!/bin/bash
+      cd #{prefix} && ./dsc "$@"
+    EOS
+    (bin/"dsc").chmod 0755
   end
-  
-    def install
-      prefix.install Dir["*"]
-      # Create a wrapper script
-      (bin/"dsc").write <<~EOS
-        #!/bin/bash
-        cd #{prefix} && ./dsc "$@"
-      EOS
-      (bin/"dsc").chmod 0755
-    end
-  end
+end
