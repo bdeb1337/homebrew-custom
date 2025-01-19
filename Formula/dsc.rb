@@ -1,17 +1,16 @@
 class Dsc < Formula
-  version "3.0.0-preview.8"
-
   desc "Microsoft Desired State Configuration v3"
+  version "3.0.0-preview.8"
   homepage "https://github.com/PowerShell/DSC"
 
 on_macos do
   if Hardware::CPU.intel?
     arch = "x86_64-apple-darwin"
-    sha256 "FC3AAA3F0A36F48D220726895BBF8A3375C43A926DF3D3C57BE873313846EEEF"
+    sha256 "fc3aaa3f0a36f48d220726895bbf8a3375c43a926df3d3c57be873313846eeef"
     url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
   elsif Hardware::CPU.arm?
     arch = "aarch64-apple-darwin"
-    sha256 "02378B85BDE208238ACC55290EF5B1AA3B5CA884AD514D7A6BC01334C287274C"
+    sha256 "02378b85bde208238acc55290ef5b1aa3b5ca884ad514d7a6bc01334c287274c"
     url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
   end
 end
@@ -19,11 +18,11 @@ end
 on_linux do
   if Hardware::CPU.intel?
     arch = "x86_64-unknown-linux-gnu"
-    sha256 "677264514D58B339F75795D2627F8C288642C096DB8C6C544FD673D684044E15"
+    sha256 "677264514d58b339f75795d2627f8c288642c096db8c6c544fd673d684044e15"
     url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
   elsif Hardware::CPU.arm?
     arch = "aarch64-unknown-linux-gnu"
-    sha256 "668F15F564655145B3C9448C5C4C410521A777FAA09117B36CCCD94E00165F80"
+    sha256 "668f15f564655145b3c9448c5c4c410521a777faa09117b36cccd94e00165f80"
     url "https://github.com/PowerShell/DSC/releases/download/v#{version}/DSC-#{version}-#{arch}.tar.gz"
   end
 end
