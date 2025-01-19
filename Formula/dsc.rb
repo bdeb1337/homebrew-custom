@@ -1,7 +1,7 @@
 class Dsc < Formula
   desc "Microsoft Desired State Configuration v3"
   homepage "https://github.com/PowerShell/DSC/releases"
-  version "3.0.0-preview.8"
+  version "3.0.0-preview.12"
 
   livecheck do
     url :homepage
@@ -11,21 +11,21 @@ class Dsc < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.8/DSC-3.0.0-preview.8-x86_64-apple-darwin.tar.gz"
-      sha256 "fc3aaa3f0a36f48d220726895bbf8a3375c43a926df3d3c57be873313846eeef"
+      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.12/DSC-3.0.0-preview.12-x86_64-apple-darwin.tar.gz"
+      sha256 "82c1c2f8601837b6f7da552991fb41d500a2b7b163dafd3d7042fe20c433ece9"
     elsif Hardware::CPU.arm?
-      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.8/DSC-3.0.0-preview.8-aarch64-apple-darwin.tar.gz"
-      sha256 "02378b85bde208238acc55290ef5b1aa3b5ca884ad514d7a6bc01334c287274c"
+      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.12/DSC-3.0.0-preview.12-aarch64-apple-darwin.tar.gz"
+      sha256 "ead49905c5b82bd2d859a8363238ce986f7ee0d5454e6013d3a1f50afde4c326"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.8/DSC-3.0.0-preview.8-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "677264514d58b339f75795d2627f8c288642c096db8c6c544fd673d684044e15"
+      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.12/DSC-3.0.0-preview.12-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "49a5cd2c5a6fb269f7480b91a2c3ecdbb9ea37a313a7e8adb1d0b2f93bc5fbd1"
     elsif Hardware::CPU.arm?
-      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.8/DSC-3.0.0-preview.8-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "668f15f564655145b3c9448c5c4c410521a777faa09117b36cccd94e00165f80"
+      url "https://github.com/PowerShell/DSC/releases/download/v3.0.0-preview.12/DSC-3.0.0-preview.12-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f0a66c784530064af0c94e2de5f075fe79e318803909a4f36a57e1997f32dfe6"
     end
   end
 
