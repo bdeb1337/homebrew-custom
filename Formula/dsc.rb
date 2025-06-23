@@ -1,7 +1,6 @@
 class Dsc < Formula
   desc "Microsoft Desired State Configuration v3"
   homepage "https://github.com/PowerShell/DSC/releases"
-  #version "3.1.0"
 
   livecheck do
     url :homepage
